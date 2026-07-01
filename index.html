@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sahyadri House — A Retreat in the Western Ghats</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-wrap">
+    <a href="#top" class="brand">Sahyadri <span>House</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#rooms">Rooms</a>
+      <a href="#weather">Plan Your Stay</a>
+      <a href="#quiz">Find Your Room</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#reviews">Guests Say</a>
+    </nav>
+    <button class="book-btn">Check Availability</button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO / CAROUSEL ============ -->
+<section class="hero" id="top">
+  <div class="carousel" id="carousel">
+    <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=1600&auto=format&fit=crop')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1602002418082-a4443e081dd1?q=80&w=1600&auto=format&fit=crop')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1600&auto=format&fit=crop')"></div>
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop')"></div>
+  </div>
+  <div class="hero-scrim"></div>
+
+  <div class="hero-content">
+    <p class="eyebrow">Western Ghats · Lonavala</p>
+    <h1>Where the clouds<br>come down to stay.</h1>
+    <p class="hero-sub">Eleven rooms, one valley, no two mornings the same. Wake up inside the monsoon mist, forty minutes from the nearest highway noise.</p>
+  </div>
+
+  <div class="search-card">
+    <div class="field">
+      <label for="checkin">Check in</label>
+      <input type="date" id="checkin">
+    </div>
+    <div class="field">
+      <label for="checkout">Check out</label>
+      <input type="date" id="checkout">
+    </div>
+    <div class="field">
+      <label for="guests">Guests</label>
+      <select id="guests">
+        <option>1 guest</option>
+        <option selected>2 guests</option>
+        <option>3 guests</option>
+        <option>4+ guests</option>
+      </select>
+    </div>
+    <button class="search-btn" id="searchBtn">Search Rooms</button>
+  </div>
+
+  <div class="carousel-dots" id="carouselDots"></div>
+  <button class="carousel-arrow prev" id="prevSlide" aria-label="Previous slide">&#8249;</button>
+  <button class="carousel-arrow next" id="nextSlide" aria-label="Next slide">&#8250;</button>
+</section>
+
+<!-- misty divider -->
+<div class="mist-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,45 L1440,90 L0,90 Z"></path></svg>
+</div>
+
+<!-- ============ WEATHER (LIVE API) ============ -->
+<section class="weather-section" id="weather">
+  <div class="section-head">
+    <p class="eyebrow eyebrow-dark">Plan Your Stay</p>
+    <h2>The valley, right now</h2>
+    <p class="section-sub">Live conditions in Lonavala, pulled straight from the sky — not a forecast page, the actual sky above the property.</p>
+  </div>
+
+  <div class="weather-card" id="weatherCard">
+    <div class="weather-loading" id="weatherLoading">
+      <div class="spinner"></div>
+      <span>Reading the valley…</span>
+    </div>
+  </div>
+</section>
+
+<!-- misty divider -->
+<div class="mist-divider mist-divider-alt" aria-hidden="true">
+  <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,50 C300,10 600,80 900,35 C1150,0 1300,60 1440,30 L1440,90 L0,90 Z"></path></svg>
+</div>
+
+<!-- ============ ROOMS ============ -->
+<section class="rooms" id="rooms">
+  <div class="section-head">
+    <p class="eyebrow eyebrow-dark">Stay</p>
+    <h2>Four rooms, four ways to sit with the fog</h2>
+  </div>
+
+  <div class="room-grid">
+    <article class="room-card">
+      <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=1200&auto=format&fit=crop')"></div>
+      <div class="room-body">
+        <div class="room-top">
+          <h3>The Cottage</h3>
+          <span class="room-code">ST-01</span>
+        </div>
+        <p>A single-storey stone cottage with its own veranda, facing the tea rows.</p>
+        <ul class="room-tags"><li>1 King Bed</li><li>Veranda</li><li>Wood Stove</li></ul>
+        <div class="room-foot">
+          <span class="price">₹6,200 <em>/ night</em></span>
+          <button class="room-btn">Reserve</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="room-card">
+      <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop')"></div>
+      <div class="room-body">
+        <div class="room-top">
+          <h3>Valley View Deluxe</h3>
+          <span class="room-code">DX-04</span>
+        </div>
+        <p>Floor-to-ceiling windows framing the full sweep of the Sahyadri range.</p>
+        <ul class="room-tags"><li>1 King Bed</li><li>Full Valley View</li><li>Reading Nook</li></ul>
+        <div class="room-foot">
+          <span class="price">₹8,900 <em>/ night</em></span>
+          <button class="room-btn">Reserve</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="room-card">
+      <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1590073242678-70ee3fc28f8e?q=80&w=1200&auto=format&fit=crop')"></div>
+      <div class="room-body">
+        <div class="room-top">
+          <h3>Riverside Suite</h3>
+          <span class="room-code">SU-02</span>
+        </div>
+        <p>Two rooms and a private deck over the stream, loudest during monsoon.</p>
+        <ul class="room-tags"><li>2 Bedrooms</li><li>Private Deck</li><li>Outdoor Tub</li></ul>
+        <div class="room-foot">
+          <span class="price">₹12,400 <em>/ night</em></span>
+          <button class="room-btn">Reserve</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="room-card">
+      <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1595576508898-0ad5c879a061?q=80&w=1200&auto=format&fit=crop')"></div>
+      <div class="room-body">
+        <div class="room-top">
+          <h3>The Machaan</h3>
+          <span class="room-code">TR-01</span>
+        </div>
+        <p>A treehouse room on stilts, ten feet up in the tree canopy.</p>
+        <ul class="room-tags"><li>1 Queen Bed</li><li>Canopy Level</li><li>No Wi-Fi</li></ul>
+        <div class="room-foot">
+          <span class="price">₹9,700 <em>/ night</em></span>
+          <button class="room-btn">Reserve</button>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ QUIZ ============ -->
+<section class="quiz-section" id="quiz">
+  <div class="section-head">
+    <p class="eyebrow eyebrow-dark">Not Sure Which Room?</p>
+    <h2>Find your room in four questions</h2>
+  </div>
+
+  <div class="quiz-card" id="quizCard">
+
+    <!-- progress -->
+    <div class="quiz-progress">
+      <div class="quiz-progress-bar" id="quizProgressBar"></div>
+    </div>
+
+    <!-- question view -->
+    <div id="quizQuestion">
+      <p class="quiz-count" id="quizCount">Question 1 of 4</p>
+      <h3 id="quizPrompt"></h3>
+      <div class="quiz-options" id="quizOptions"></div>
+    </div>
+
+    <!-- result view -->
+    <div id="quizResult" class="quiz-result hidden">
+      <p class="quiz-count">Your Match</p>
+      <h3 id="resultTitle"></h3>
+      <p id="resultDesc"></p>
+      <div class="result-actions">
+        <button class="room-btn" id="quizRestart">Take It Again</button>
+        <button class="search-btn" id="quizViewRoom">View This Room</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- misty divider -->
+<div class="mist-divider" aria-hidden="true">
+  <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,45 L1440,90 L0,90 Z"></path></svg>
+</div>
+
+<!-- ============ AMENITIES ============ -->
+<section class="amenities" id="amenities">
+  <div class="section-head">
+    <p class="eyebrow eyebrow-dark">On the Property</p>
+    <h2>Small, on purpose</h2>
+  </div>
+  <div class="amenity-grid">
+    <div class="amenity"><span class="amenity-num">01</span><h4>Wood-Fired Kitchen</h4><p>Breakfast is whatever the garden gave up that morning.</p></div>
+    <div class="amenity"><span class="amenity-num">02</span><h4>Guided Hill Walks</h4><p>Local naturalist-led walks to the waterfall, 6am starts.</p></div>
+    <div class="amenity"><span class="amenity-num">03</span><h4>No Television</h4><p>Every room instead, a record player and a stack of vinyl.</p></div>
+    <div class="amenity"><span class="amenity-num">04</span><h4>Rain Library</h4><p>A reading room built specifically for monsoon afternoons.</p></div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="reviews" id="reviews">
+  <div class="section-head light">
+    <p class="eyebrow">Guests Say</p>
+    <h2>Notes left in the guestbook</h2>
+  </div>
+  <div class="review-grid">
+    <blockquote class="review"><p>We came for one night and stayed three. The fog rolled into the room through the window and nobody closed it.</p><cite>— Ananya R., Pune</cite></blockquote>
+    <blockquote class="review"><p>The Machaan is not for anyone afraid of heights or squirrels. It is, however, the best sleep I've had in years.</p><cite>— Karan M., Mumbai</cite></blockquote>
+    <blockquote class="review"><p>No Wi-Fi in half the rooms and I didn't miss it once. Ask for the riverside deck at 6am.</p><cite>— Divya S., Bengaluru</cite></blockquote>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <p class="brand footer-brand">Sahyadri <span>House</span></p>
+      <p>Amboli Road, near Duke's Nose,<br>Lonavala, Maharashtra 410401</p>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <p>+91 98200 00000<br>stay@sahyadrihouse.example</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <p><a href="#rooms">Rooms</a><br><a href="#quiz">Find Your Room</a><br><a href="#amenities">Amenities</a></p>
+    </div>
+  </div>
+  <p class="footer-note">Built as a portfolio project. Prices and property are fictional; weather is real.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
